@@ -13,14 +13,14 @@ RUN apt-get update && \
 COPY SRBMiner-Multi-2-7-2 /SRBMiner-Multi-2-7-2
 
 # Salin file start-mining.sh ke dalam kontainer
-COPY start_na.sh /SRBMiner-Multi-2-7-2/start_na.sh
+COPY start-mining.sh /SRBMiner-Multi-2-7-2/start-mining.sh
 
 # Memberikan izin eksekusi pada script start-mining.sh dan SRBMiner-MULTI
-RUN chmod +x /SRBMiner-Multi-2-7-2/start_na.sh \
+RUN chmod +x /SRBMiner-Multi-2-7-2/start-mining.sh \
     && chmod +x /SRBMiner-Multi-2-7-2/SRBMiner-MULTI
 
 # Set working directory
 WORKDIR /SRBMiner-Multi-2-7-2
 
 # Jalankan script saat kontainer dimulai
-CMD ["/bin/bash", "/SRBMiner-Multi-2-7-2/start_na.sh"]
+CMD ["/bin/bash", "/SRBMiner-Multi-2-7-2/start-mining.sh"]
